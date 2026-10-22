@@ -79,5 +79,27 @@ print("Sinu
 
 UL 7 
 
+arv1 = int(input("Sisesta 1. arv: "))
+arv2 = int(input("Sisesta 2. arv: "))
+arv3 = int(input("Sisesta 3. arv: "))
+arv4 = int(input("Sisesta 4. arv: "))
+arv5 = int(input("Sisesta 5. arv: "))
+
+summa = arv1 + arv2 + arv3 + arv4 + arv5
+keskmine = summa / 5
+
+print("Summa:", summa)
+print("Aritmeetiline keskmine:", round(keskmine, 2))
+
+kasutaja_sisend = input("Sisesta jagaja: ")
+jagaja = int(kasutaja_sisend)
+
+taisarvuline_osa = summa // jagaja
+jaak = summa % jagaja
+
+print("Täisarvuline osa:", taisarvuline_osa)
+print("Jääk:", jaak)
+
+
 
 
