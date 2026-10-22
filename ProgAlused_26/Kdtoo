@@ -67,5 +67,17 @@ except Exception as e:
     print(f"Programmi töös tekkis ootamatu viga: {e}")
 
 
+UL 6 
+
+aeg = float(input("Mitu Tundi kulus sõiduks"))
+teepikus = float(input("Mitu Kilomeetrid sõitsid"))
+kiirus = teepikus / aeg
+
+print("Sinu 
+
+
+
+UL 7 
+
 
 
