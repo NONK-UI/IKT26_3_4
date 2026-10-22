@@ -34,5 +34,38 @@ print("Ringjoone pikkus", round(C, 2))
 
 ###
 
+ÜL 4 
+
+
+
+
+import calendar
+from datetime import date
+
+MAA_RAADIUS_KM = 6378
+MYNDI_LABIMOOT_MM = 25.75
+PI = 3.1415926535
+
+try:
+    maa_raadius_mm = MAA_RAADIUS_KM * 1000 * 1000
+    maa_ymbermoot_mm = 2 * PI * maa_raadius_mm
+    myntide_arv = maa_ymbermoot_mm / MYNDI_LABIMOOT_MM
+    myntide_arv_ymardatud = round(myntide_arv)
+
+    print(f"Maa ekvaatori ümbermõõdu katmiseks kulub umbes {myntide_arv_ymardatud:,} kaheeurost münti.")
+
+    tana = date.today()
+    aasta = tana.year
+    kuu = tana.month
+    paevi_kuus = calendar.monthrange(aasta, kuu)[1]
+
+    print(f"\nArvutus teostati: {tana.strftime('%d.%m.%Y')}. Selles kuus on {paevi_kuus} päeva.")
+
+except ZeroDivisionError:
+    print("Viga: Mündi läbimõõt ei saa olla 0!")
+except Exception as e:
+    print(f"Programmi töös tekkis ootamatu viga: {e}")
+
+
 
 
