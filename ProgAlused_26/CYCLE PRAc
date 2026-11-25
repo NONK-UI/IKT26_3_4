@@ -20,3 +20,93 @@ print("\nPaaritud arvud kuni 30. Kasutame for cycle")
 for x in range(30):
     if x % 2 == 1:
         print(x, end=" ")
+
+
+
+
+ül 5 
+
+n = int(input("Mitu arvu soovid sisestada (N)? "))
+negatiivsete_summa = 0
+
+for i in range(n):
+    arv = float(input(f"Sisesta {i + 1}. arv: "))
+    if arv < 0:
+        negatiivsete_summa += arv
+
+print("Negatiivsete arvude summa on:", negatiivsete_summa)
+
+
+KÕIK ÜLS 
+
+
+
+while True:
+    print("\nVali: ")
+    valik = input("Ülesanded 1-7, 0 - väljumiseks: ")
+    
+    if valik == "1":
+        print("Valisid 1. Sisestatakse 15 arvu. Määrata, mitu neist on täisarvud.")
+        taisarvude_kogus = 0
+        for i in range(15):
+            try:
+                arv = float(input(f"Sisesta {i+1}. arv: "))
+                if arv.is_integer():
+                    print(f"{arv} on täisarv.")
+                    taisarvude_kogus += 1
+                else:
+                    print(f"{arv} ei ole täisarv.")
+            except ValueError:
+                print("Vale sisend! Palun sisesta arv.")
+        print(f"Kokku sisestati {taisarvude_kogus} täisarvu.")
+
+    elif valik == "2":
+        print("Valisid 2. Küsi kasutajalt arv A ja leia kõigi naturaalarvude summa vahemikus 1 kuni A.")
+        summa = 0
+        while True:
+            try:
+                A = int(input("Sisesta naturaalarv A: "))
+                if A < 1:
+                    print("Vale sisend! Palun sisesta naturaalarv (suurem kui 0).")
+                else:
+                    for i in range(1, A + 1):
+                        summa += i
+                  
+                    print(f"Kõigi naturaalarvude summa vahemikus 1 kuni {A} on: {summa}")
+                    break  
+            except ValueError:
+                print("VIGA! Palun sisesta täisarv.")
+
+    elif valik == "3":
+        print("Valisid 3. Sisestatakse 8 arvu. Leida nende korrutis (ainult positiivsete arvude puhul).")
+        korrutis = 1
+        on_positiivseid = False 
+        for i in range(8):
+            try:
+                arv = float(input(f"Sisesta {i+1}. arv: "))
+                if arv > 0:
+                    korrutis *= arv
+                    on_positiivseid = True
+                else:
+                    print(f"{arv} ei ole positiivne arv.")
+            except ValueError:
+                print("Vale sisend! Palun sisesta arv.")
+        
+        if on_positiivseid:
+            print(f"Positiivsete arvude korrutis on: {korrutis}")
+        else:
+            print("Positiivseid arve ei sisestatud.")
+
+    elif valik == "4":
+        print("Valisid 4")
+    elif valik == "5":
+        print("Valisid 5")
+    elif valik == "6":
+        print("Valisid 6")
+    elif valik == "7":
+        print("Valisid 7")
+    elif valik == "0":
+        print("Väljumine...")
+        break
+    else:
+        print("Vale valik!")
